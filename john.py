@@ -2,6 +2,7 @@ import pyautogui
 import time
 
 time.sleep(1)
+pyautogui.PAUSE = 0.015
 screen_size = pyautogui.size()
 
 pyautogui.screenshot(region=(5, 220, 1890, 830))
