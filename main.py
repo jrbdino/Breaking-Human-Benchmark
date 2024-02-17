@@ -7,3 +7,5 @@ def addJohn():
 
 addJohn()
     
+import pyautogui
+
