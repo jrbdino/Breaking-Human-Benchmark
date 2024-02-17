@@ -5,10 +5,7 @@ time.sleep(1)
 pyautogui.PAUSE = 0.015
 screen_size = pyautogui.size()
 
-pyautogui.screenshot(region=(5, 220, 1890, 830))
-
-for i in range(31):
+# for i in range(100):
+while 1:
     x, y = pyautogui.locateCenterOnScreen('Images/light blue.PNG')
-    print(x, y)
     pyautogui.click(x, y)
-    # print(pyautogui.mouseInfo())
