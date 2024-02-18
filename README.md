@@ -50,5 +50,7 @@ We would like to complete the 2 remaining benchmarks, so we could have all 8 com
 
 6 of 8 Human Benchmark tests have been broken with our Python scripts.
 
-
-
+## Collaborators
+- John Behrens
+- Carson Mead
+- Klayton Pagel
