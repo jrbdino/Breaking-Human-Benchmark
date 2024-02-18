@@ -6,6 +6,7 @@ class SequenceMemory:
 
     # Initial set up____________________________________________________________________________________________________
     def __init__(self):
+        time.sleep(5)
         self.screen_width = pyautogui.size()[0]
         self.screen_height = pyautogui.size()[1]
         self.level = 1
@@ -66,7 +67,3 @@ class SequenceMemory:
         self.find_sequence()
         self.execute_sequence()
         self.run()
-
-
-time.sleep(5)
-SequenceMemory()

@@ -19,15 +19,17 @@ class NumberMemory:
         self.value = None
 
         self.round = 0
+        self.start()
+        self.run()
 
     # Takes a screenshot, then opens and alters the image_______________________________________________________________
     def get_image(self):
-        pyautogui.screenshot('Images/numberMemory.png', region=(self.photoLeft, self.photoTop,
+        pyautogui.screenshot('../Images/numberMemory.png', region=(self.photoLeft, self.photoTop,
                                                                 self.photoWidth, self.photoHeight))
 
         image = Image.open('../Images/numberMemory.png').convert('L')
         image = PIL.ImageOps.invert(image)
-        image.save('Images/numberMemory.png')
+        image.save('../Images/numberMemory.png')
         return image
 
     # Stores the string value of the numbers in the screenshot__________________________________________________________
@@ -57,12 +59,12 @@ class NumberMemory:
     def next_round(self):
         # click submit
         time.sleep(2)
-        pos = pyautogui.locateCenterOnScreen('Images/number_memory_yellow.png')
+        pos = pyautogui.locateCenterOnScreen('../Images/number_memory_yellow.png')
         pyautogui.moveTo(pos.x, pos.y, 1)
         pyautogui.click()
         time.sleep(2)
         # click next
-        pos = pyautogui.locateCenterOnScreen('Images/number_memory_yellow.png')
+        pos = pyautogui.locateCenterOnScreen('../Images/number_memory_yellow.png')
         pyautogui.moveTo(pos.x, pos.y, 1)
         pyautogui.click()
 
@@ -74,6 +76,12 @@ class NumberMemory:
         elif self.round == 13:
             self.photoWidth = self.screenWidth
             self.photoLeft = self.screenWidth // 2 - self.photoWidth // 2
+
+    def start(self):
+        time.sleep(5)
+        pos = pyautogui.locateCenterOnScreen('../Images/number_memory_yellow.png')
+        pyautogui.moveTo(pos.x, pos.y, 1)
+        pyautogui.click()
 
     # Runs and controls the flow of the program_________________________________________________________________________
     def run(self):
@@ -87,12 +95,3 @@ class NumberMemory:
         self.next_round()
         print('running again')
         self.run()
-
-
-time.sleep(5)
-pos = pyautogui.locateCenterOnScreen('../Images/number_memory_yellow.png')
-pyautogui.moveTo(pos.x, pos.y, 1)
-pyautogui.click()
-NumberMemory().run()
-
-
