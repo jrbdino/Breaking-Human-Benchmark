@@ -7,11 +7,13 @@ Breaking Human Benchmark completes the tests on [Human Benchmark](https://humanb
 
 ## How we built the different functions
 ### Packages and Dependencies
-python 3.9
-pyautogui
-pytesseract
-PIL
-[UB Mannheim fork of Tesseract](https://github.com/UB-Mannheim/tesseract)
+- python 3.9
+- pyautogui
+- pytesseract
+- PIL
+- pyinstaller
+- [UB Mannheim fork of Tesseract](https://github.com/UB-Mannheim/tesseract)
+
 
 ### Reaction Time
 The first and easiest solution we have implemented.  The User starts the clock, then the code watches the cursor's point for when it turns green and clicks then. Plain and simple.
