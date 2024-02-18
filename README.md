@@ -25,12 +25,13 @@ With a library of enough boxed numbers, we search and order the numbered boxes. 
 Using precise timing we record the sequence of dots that turn white. Then replicate the pattern using clicks.  We see no end to this program.
 
 ## Challenges we ran into
+Some of the benchmarks are resolution and browser specific due to the way we used pyautogui.
 
 ## Accomplishments that we're proud of
 We are only expected to be able to complete 2-3 of the tests over the course of the weekend.  We exceeded that and completed 6 of the 8 benchmarks. We already have progress on 1 of the 2 remaining tests.
 
 ## What we learned
-We learned how to use pyautogui to automate and control mouse and keyboard inputs.  We learned how pytessaract to do optical character recognition (OCR) on text and how to refine its accuracy.
+We learned how to use pyautogui to automate and control mouse and keyboard inputs.  We learned how pytesseract to do optical character recognition (OCR) on text and how to refine its accuracy.
 
 ## What's next for Breaking Human Benchmark
 We would like to complete the 2 remaining benchmarks, so we could have all 8 completed automatically.
@@ -47,9 +48,7 @@ We would like to complete the 2 remaining benchmarks, so we could have all 8 com
 - Visual Memory
 - Verbal Memory
 
-5 of 8 Human Benchmark tests have been broken with our Python scripts.
-> made using pyautogui
-Because we use this package a few of our programs are resolution specific.
+6 of 8 Human Benchmark tests have been broken with our Python scripts.
 
 
 
