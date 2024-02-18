@@ -3,6 +3,8 @@ import pyautogui
 
 
 class SequenceMemory:
+
+    # Initial set up____________________________________________________________________________________________________
     def __init__(self):
         self.screen_width = pyautogui.size()[0]
         self.screen_height = pyautogui.size()[1]
@@ -16,45 +18,54 @@ class SequenceMemory:
 
     # Find the 9 points on the grid_____________________________________________________________________________________
     def find_grid(self):
-        self.points = [[1576, 850], [1910, 850],
-                       [2218, 850], [1576, 1180],
-                       [1910, 1180], [2218, 1180],
-                       [1576, 1508], [1910, 1508],
-                       [2218, 1508]]
 
+        midx = self.screen_width//2
+        midy = self.screen_height//2
+        separation = self.screen_width//15
+        for y in range(3):
+            for x in range(3):
+                if x == 0:
+                    posX = midx - separation
+                elif x == 2:
+                    posX = midx + separation
+                else:
+                    posX = midx
+
+                if y == 0:
+                    posY = midy - separation
+                elif y == 2:
+                    posY = midy + separation
+                else:
+                    posY = midy
+                self.points.append([posX, posY])
+
+    # Check each square to see where the next position is_______________________________________________________________
     def find_sequence(self):
         time.sleep(.5)
         for levels in range(self.level):
-            time.sleep(.4)
-            for point in self.points:
-                if pyautogui.pixelMatchesColor(point[0], point[1], (255, 255, 255)):
-                    self.sequence.append([point[0], point[1]])
+            time.sleep(.5)
+        for point in self.points:
+            if pyautogui.pixelMatchesColor(point[0], point[1], (255, 255, 255)):
+                self.sequence.append([point[0], point[1]])
         self.level += 1
 
+    # Iterate through the list of found points and click on them________________________________________________________
     def execute_sequence(self):
-        time.sleep(1)
-        while len(self.sequence) > 0:
-            pos = self.sequence.pop(0)
-            pyautogui.moveTo(pos[0], pos[1], .1)
+        time.sleep(1.5)
+        for point in self.sequence:
+            pyautogui.moveTo(point[0], point[1], .1)
             pyautogui.click()
 
-    def move(self):
-        for point in self.points:
-            pyautogui.moveTo(point[0], point[1], 1)
-
+    # Click the start button to begin the benchmark_____________________________________________________________________
     def start(self):
-        # pos = pyautogui.locateCenterOnScreen('../Images/start_button.png')
-        # pyautogui.moveTo(pos.x, pos.y, .5)
-        pyautogui.moveTo(1900, 1440, .5)
+        pyautogui.moveTo(self.points[-2][0], self.points[-2][1], .2)
         pyautogui.click()
 
+    # Control each part of the program__________________________________________________________________________________
     def run(self):
         self.find_sequence()
         self.execute_sequence()
         self.run()
-
-        # self.move()
-        # pyautogui.mouseInfo()
 
 
 time.sleep(5)
