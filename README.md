@@ -6,11 +6,11 @@
 - Typing Speed
 - Number Memory
 - Chimp Test
+- Sequence Memory
 
 ### Yet To Be Broken
 - Visual Memory
 - Verbal Memory
-- Sequence Memory
 
 5 of 7 Human Benchmark tests have been broken with our Python scripts.
 > made using pyautogui
@@ -33,3 +33,5 @@ Using the Tesserect package again, we now pull the numbers shown, and type them 
 ### Chimp Test
 With a library of enough boxed numbers, we search and order the numbered boxes.  Then after collecting the level amount, we rapidly click through.
 
+### Sequence Memory
+Using precise timing we record the sequence of dots that turn white. Then replicate the pattern using clicks.  We see no end to this program.
