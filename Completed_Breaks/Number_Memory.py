@@ -90,7 +90,7 @@ class NumberMemory:
 
 
 time.sleep(5)
-pos = pyautogui.locateCenterOnScreen('Images/number_memory_yellow.png')
+pos = pyautogui.locateCenterOnScreen('../Images/number_memory_yellow.png')
 pyautogui.moveTo(pos.x, pos.y, 1)
 pyautogui.click()
 NumberMemory().run()
