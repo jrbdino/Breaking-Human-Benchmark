@@ -1,8 +1,14 @@
 # Breaking Human Benchmark Test
 
-### Memories
+### Currently Working
+- Reaction Time
+- Accuracy Test
+- Typing Speed
 
-### typgin?
+### In Progress
+- Number Memory
+- Improved Typing Speed Test
+- Chimp Test
 
 ### ong fr fr
 
