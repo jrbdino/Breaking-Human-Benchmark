@@ -12,7 +12,7 @@ class NumberMemory:
     # Initial set up____________________________________________________________________________________________________
     def __init__(self):
         self.screenWidth, self.screenHeight = pyautogui.size()
-        self.photoWidth, self.photoHeight = self.screenWidth // 5, self.screenHeight // 8
+        self.photoWidth, self.photoHeight = self.screenWidth // 5, self.screenHeight // 10
         self.photoLeft = self.screenWidth // 2 - self.photoWidth // 2
         self.photoTop = self.screenHeight // 2 - self.photoHeight
 
@@ -55,24 +55,32 @@ class NumberMemory:
 
     # clicks the submit then next button to go to the next round________________________________________________________
     def next_round(self):
-        if self.round == 5:
-            self.photoWidth = self.screenWidth // 2
         # click submit
-        time.sleep(3)
+        time.sleep(2)
         pos = pyautogui.locateCenterOnScreen('Images/number_memory_yellow.png')
         pyautogui.moveTo(pos.x, pos.y, 1)
         pyautogui.click()
-        time.sleep(3)
+        time.sleep(2)
         # click next
         pos = pyautogui.locateCenterOnScreen('Images/number_memory_yellow.png')
         pyautogui.moveTo(pos.x, pos.y, 1)
         pyautogui.click()
 
+    # Checks to see of the photo width should be increased______________________________________________________________
+    def check_increase(self):
+        if self.round == 5:
+            self.photoWidth = self.screenWidth // 2
+            self.photoLeft = self.screenWidth // 2 - self.photoWidth // 2
+        elif self.round == 13:
+            self.photoWidth = self.screenWidth
+            self.photoLeft = self.screenWidth // 2 - self.photoWidth // 2
+
     # Runs and controls the flow of the program_________________________________________________________________________
     def run(self):
+        self.check_increase()
         print('round:', self.round)
         self.set_value()
-        time.sleep(self.round*2)
+        time.sleep(self.round*1.8)
         print('Writing values')
         self.write_values()
         print('next round')
