@@ -14,6 +14,9 @@ Breaking Human Benchmark completes the tests on [Human Benchmark](https://humanb
 - pyinstaller
 - [UB Mannheim fork of Tesseract](https://github.com/UB-Mannheim/tesseract)
 
+### Pyinstaller Command
+pyinstaller -w --add-data '../:.' --add-data '../Images:.' --hidden-import=pyautogui --hidden-import=pytesseract .\main.py
+
 
 ### Reaction Time
 The first and easiest solution we have implemented.  The User starts the clock, then the code watches the cursor's point for when it turns green and clicks then. Plain and simple.
