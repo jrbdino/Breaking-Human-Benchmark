@@ -25,7 +25,7 @@ class NumberMemory:
         pyautogui.screenshot('Images/numberMemory.png', region=(self.photoLeft, self.photoTop,
                                                                 self.photoWidth, self.photoHeight))
 
-        image = Image.open('Images/numberMemory.png').convert('L')
+        image = Image.open('../Images/numberMemory.png').convert('L')
         image = PIL.ImageOps.invert(image)
         image.save('Images/numberMemory.png')
         return image
