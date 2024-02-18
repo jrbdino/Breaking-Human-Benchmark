@@ -1,11 +1,8 @@
-print("John did you add me?")
+import tkinter
+
+screen = tkinter.Tk()
+screen.title('Breaking Human Benchmark')
 
 
-def addJohn():
-    repo = "Breaking-Human-Benchmark"
-    repo += "John"
 
-addJohn()
-    
-import pyautogui
-
+screen.mainloop()
