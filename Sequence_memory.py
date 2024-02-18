@@ -7,6 +7,7 @@ class SequenceMemory:
         self.screen_width = pyautogui.size()[0]
         self.screen_height = pyautogui.size()[1]
         self.points = []
+        self.sequence = []
         self.find_grid()
         self.start()
         self.move()

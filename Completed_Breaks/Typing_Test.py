@@ -15,9 +15,9 @@ photoTop = screenHeight//2 - photoHeight//2 + 90
 
 
 time.sleep(1)
-pyautogui.screenshot('Images/Typing_Test.png', region=(photoLeft, photoTop, photoWidth, photoHeight))
-image = Image.open('Images/Typing_Test.png').convert('L')
-image.save('Images/Typing_Test.png')
+pyautogui.screenshot('../Images/Typing_Test.png', region=(photoLeft, photoTop, photoWidth, photoHeight))
+image = Image.open('../Images/Typing_Test.png').convert('L')
+image.save('../Images/Typing_Test.png')
 paragraph = pytesseract.image_to_string(image)
 benchmark = paragraph.replace("\n", " ")
 benchmark = benchmark.replace("|", "I")
