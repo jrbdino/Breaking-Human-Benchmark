@@ -25,7 +25,7 @@ The first and easiest solution we have implemented.  The User starts the clock, 
 This task was a bit more difficult. Implementing image matching and finding we could find the target on the screen.  Our image we look for is actually a 3 by 3 group of pixels of a light blue color.
 
 ### Typing Speed
-Here we get a complex.  Implementing Tesseract for Python, we can now recognize characters from images.  Using this we can pull plain text from the window and use type_write to type it blazingly fast into the prompt box.
+Here we get more complex. Implementing Tesseract for Python, we can now recognize characters from images.  Using this we can pull plain text from the window and use type_write to type it blazingly fast into the prompt box.
 
 ### Number Memory
 Using the pytesseract package again, we now pull the numbers shown, and type them into the answer bar simply.  However, the Tesseract Package is sometimes unreliable, getting up level 17, but sometimes getting stuck on level 1.

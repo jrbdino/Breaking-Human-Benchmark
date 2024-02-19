@@ -10,7 +10,7 @@ class TypingTest:
         pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
         screenWidth, screenHeight = pyautogui.size()
-        print(screenWidth)
+        # print(screenWidth)
         photoWidth, photoHeight = screenWidth, screenHeight // 5
         photoLeft = 0
         photoTop = screenHeight // 2 - photoHeight // 2 + 90
@@ -24,8 +24,8 @@ class TypingTest:
         benchmark = benchmark.replace("|", "I")
         benchmark = benchmark.replace("  ", " ")
 
-        print(benchmark)
+        # print(benchmark)
 
         pyautogui.PAUSE = 2.5
-        print(benchmark)
+        # print(benchmark)
         pyautogui.typewrite(benchmark)
