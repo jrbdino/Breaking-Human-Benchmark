@@ -1,13 +1,12 @@
 import pyautogui as gui
 
-
-class ChimpTest:
+class ChimpTest():
     def __init__(self):
         for n in range(21):
             seq_xy = []
             curr_len = 4 + n
             for i in range(1, curr_len + 1):
-                ref = '..\Images\Chimp_Test_Images\%s.png' % (str(i))
+                ref = '..\Images\Chimp_Test_Images\%s.png' %(str(i))
                 print(ref)
                 x, y = gui.locateCenterOnScreen(ref)
                 seq_xy.append([x, y])
